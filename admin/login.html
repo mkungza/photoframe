@@ -1,0 +1,48 @@
+<html>
+<title>Login</title>
+<head>
+	<script src="script/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#tt').click(function(e){
+				e.preventDefault();
+				if($('#user').val() == "")
+				{
+					alert('Please Enter Username');
+					$('#user').focus();
+				}
+				else if ($('#pass').val() == "")
+				{
+					alert('Please Enter Password');
+					$('#pass').focus();
+				}
+				else
+				{
+					$('#forms').submit();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<form method="post" action="checklogin.php" id="forms">
+	<div style="text-align:center;margin-top:100px;"> 
+		<img src="image/login.jpg"><br><br>
+			<center>
+				<table>
+					<tr>
+						<td style="height:20px">Username : </td><td style="height:20px"><input type="text" name="id" id="user"></td>
+					</tr>
+					<tr>
+						<td style="height:20px">Password : </td><td style="height:20px"><input type="password" name="pw" id="pass"></td>
+					</tr>
+				</table>
+			</center>
+			<br>
+		<input type="submit" value="Login" id="tt">
+		<input type="reset" value="Cancel">
+	</div>
+</form>
+</body>
+
+</html>
